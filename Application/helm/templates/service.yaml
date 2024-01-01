@@ -10,4 +10,4 @@ spec:
       targetPort: {{ .Values.containers.containerPort }}
   selector:
 # set your user name
-    app: ({ .Chart.Name }}
+    app: '({ .Chart.Name }}'
