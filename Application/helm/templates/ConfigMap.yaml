@@ -1,7 +1,7 @@
 kind: ConfigMap
 apiVersion: v1
 metadata:
-  name: '{{ .Chart.Name }}-html'
+  name: {{ .Chart.Name }}-html
 immutable: false
 data:
   index.html: |-

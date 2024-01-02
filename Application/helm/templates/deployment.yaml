@@ -33,7 +33,7 @@ spec:
       volumes:
         - name: index-html
           configMap:
-            name: '{{ .Chart.Name }}-html'
+            name: {{ .Chart.Name }}-html
             defaultMode: 420
   strategy:
     type: RollingUpdate
