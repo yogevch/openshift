@@ -3,19 +3,8 @@ deploy1:
 
   containers:
       containerPort: 8080
-      image: 'oci://ghcr.io/yogevch/helm/'
-      tag: 'deploy1'
+      image: 'quay.io/yogevuser16/openshift'
+      tag: 'chart_v2'
 
   service:
       servicePort: 8080
----
-deploy2: 
-  ReplicaNumber: 1
-
-  containers:
-    containerPort: 8080
-    image: 'oci://ghcr.io/yogevch/helm/'
-    tag: 'deploy2'
-
-  service:
-    servicePort: 8080
