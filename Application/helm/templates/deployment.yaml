@@ -25,8 +25,16 @@ spec:
           imagePullPolicy: IfNotPresent
 # Update with the image you build in part 1
           image: {{ .Values.containers.image }}:{{ .Values.containers.tag }}
+        volumeMounts:
+          - name: index-html
+            mountPath: /tmp/html # this will mount the html.index file to it application location
       restartPolicy: Always
       terminationGracePeriodSeconds: 30
+      volumes:
+        - name: index-html
+          configMap:
+            name: '{{ .Chart.Name }}-html'
+            defaultMode: 420
   strategy:
     type: RollingUpdate
     rollingUpdate:
